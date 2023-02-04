@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class MovementScript : MonoBehaviour
@@ -11,12 +12,11 @@ public class MovementScript : MonoBehaviour
         MovingTowardsNavPoint,
     }
     [SerializeField] CurrentState currentState;
-    [SerializeField] List<GameObject> NavPoints = new List<GameObject>();
+    [SerializeField] public List<GameObject> NavPoints = new List<GameObject>();
     [SerializeField] Vector3 targetLocation;
 
     [SerializeField] float distanceToTarget;
     [SerializeField] float speed;
-    //[SerializeField] int maxNavPointcount;
     [SerializeField] int currentNavPointInTheList;
     [SerializeField] bool haveWeReachedTarget;
 
@@ -28,6 +28,8 @@ public class MovementScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject caller = gameObject;
+        GetComponentInParent<SpawnScript>().AssignNavPointsToChildren(caller);
         currentNavPointInTheList = 0;
         targetLocation = NavPoints[currentNavPointInTheList].transform.position;
         SetState(CurrentState.MovingTowardsNavPoint);

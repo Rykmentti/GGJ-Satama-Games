@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5437643753316240825, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5437643753316240831, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
       propertyPath: m_Name
       value: NavPoint (2)
@@ -360,6 +364,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5437643753316240825, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5437643753316240831, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
       propertyPath: m_Name
       value: NavPoint (3)
@@ -437,6 +445,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5437643753316240825, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5437643753316240831, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
       propertyPath: m_Name
       value: NavPoint (1)
@@ -492,6 +504,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5437643753316240824, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437643753316240825, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5437643753316240831, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
@@ -1543,6 +1559,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5437643753316240825, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5437643753316240831, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
       propertyPath: m_Name
       value: NavPoint (5)
@@ -1598,6 +1618,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5437643753316240824, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437643753316240825, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5437643753316240831, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
@@ -1804,6 +1828,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5437643753316240824, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437643753316240825, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5437643753316240831, guid: da6fa1c347ce30e409c49f297e3919c3, type: 3}

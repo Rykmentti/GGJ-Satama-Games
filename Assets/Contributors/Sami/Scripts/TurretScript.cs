@@ -13,8 +13,8 @@ public class TurretScript : MonoBehaviour
     [SerializeField] CurrentState currentState;
     [SerializeField] GameObject currentTarget;
     [SerializeField] GameObject detector;
-    [SerializeField] int damage = 10;
-    [SerializeField] float firerate = 0.25f;
+    [SerializeField] int damage;
+    [SerializeField] float firerate;
     [SerializeField] bool shootCooldown;
     void SetState(CurrentState state) // Method we use to change states in the state machine.
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 public class DetectorScript : MonoBehaviour
 {
     public GameObject detectorTarget;
-    [SerializeField] float detectorRadius = 5f;
+    [SerializeField] float detectorRadius;
     [SerializeField] float detectorTargetDistance;
     // Start is called before the first frame update
     void Start()
