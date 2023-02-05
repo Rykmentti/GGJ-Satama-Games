@@ -14,15 +14,24 @@ public class DetectorScript : MonoBehaviour
             DistanceCalcuation();
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
+    /*void OnTriggerEnter2D(Collider2D other)
     {
         if (detectorTarget == null)
         {
             detectorTarget = other.gameObject;
         }
     }
+    */
     void OnTriggerStay2D(Collider2D other)
     {
+        if (detectorTarget != null)
+        {
+            return;
+        }
+        if (detectorTarget == null)
+        {
+            detectorTarget = other.gameObject;
+        }
 
     }
     void OnTriggerExit2D(Collider2D other)

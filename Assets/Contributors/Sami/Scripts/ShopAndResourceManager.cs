@@ -29,14 +29,14 @@ public class ShopAndResourceManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             buildMode = true;
             objectToBeBuilt = atomizer;
             buildCost = atomizerPrice;
             Debug.Log("Build Mode for Atomizer");
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             buildMode = true;
             objectToBeBuilt = shovelista;

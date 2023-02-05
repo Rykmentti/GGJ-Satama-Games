@@ -6,17 +6,24 @@ public class SpawnScript : MonoBehaviour
 {
     [SerializeField] public List<GameObject> NavPoints = new List<GameObject>();
 
+    [SerializeField] GameObject startWaveAudioPlayer;
+    [SerializeField] GameObject resourceScript;
+    [SerializeField] GameObject StartWaveSoundPlayer;
+    [SerializeField] GameObject StartWaveSoundEffectPlayer;
     [SerializeField] GameObject bonbelion;
     [SerializeField] GameObject marchigold;
     [SerializeField] GameObject whactus;
 
     int waveCount = 0;
-    float timeBetweenWaves = 15;
+    float timeBetweenWaves = 20;
     bool waveCooldown;
     // Start is called before the first frame update
     void Start()
     {
-
+        StartWaveSoundPlayer = GameObject.Find("StartWaveSoundPlayer");
+        StartWaveSoundEffectPlayer = GameObject.Find("StarWaveSoundEffectPlayer");
+        resourceScript = GameObject.Find("Canvas");
+        StartCoroutine(SpawnWaves());
     }
 
     // Update is called once per frame
@@ -39,28 +46,19 @@ public class SpawnScript : MonoBehaviour
             //StartCoroutine(StartWave());
         }
     }
-    void SpawnWaves()
+    IEnumerator SpawnWaves()
     {
-        if (waveCount == 1)
-        {
-
-        }
-        if (waveCount == 2)
-        {
-
-        }
-        if (waveCount == 3)
-        {
-
-        }
-        if (waveCount == 4)
-        {
-
-        }
-        if (waveCount == 5)
-        {
-
-        }
+        yield return new WaitForSeconds(5);
+        StartCoroutine(StartWave1());
+        yield return new WaitForSeconds(timeBetweenWaves);
+        StartCoroutine(StartWave2());
+        yield return new WaitForSeconds(timeBetweenWaves);
+        StartCoroutine(StartWave3());
+        yield return new WaitForSeconds(timeBetweenWaves);
+        StartCoroutine(StartWave4());
+        yield return new WaitForSeconds(timeBetweenWaves);
+        StartCoroutine(StartWave5());
+        Debug.Log("All Waves have spawned");
     }
     void SpawnBonbelion()
     {
@@ -84,7 +82,7 @@ public class SpawnScript : MonoBehaviour
         caller.GetComponent<MovementScript>().NavPoints[5] = NavPoints[5];
         caller.GetComponent<MovementScript>().NavPoints[6] = NavPoints[6];
     }
-    IEnumerator StartWave()
+    IEnumerator StartWave1()
     {
         waveCooldown = true;
         SpawnBonbelion();
@@ -108,7 +106,175 @@ public class SpawnScript : MonoBehaviour
         SpawnBonbelion();
         yield return new WaitForSeconds(1);
         SpawnBonbelion();
-        yield return new WaitForSeconds(timeBetweenWaves);
+        yield return new WaitForSeconds(1);
+        resourceScript.GetComponent<ShopAndResourceManager>().playerResources += 50;
+        yield return new WaitForSeconds(1);
+        waveCount++;
+        waveCooldown = false;
+    }
+    IEnumerator StartWave2()
+    {
+        waveCooldown = true;
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        resourceScript.GetComponent<ShopAndResourceManager>().playerResources += 50;
+        yield return new WaitForSeconds(1);
+        waveCount++;
+        waveCooldown = false;
+    }
+    IEnumerator StartWave3()
+    {
+        waveCooldown = true;
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        resourceScript.GetComponent<ShopAndResourceManager>().playerResources += 150;
+        yield return new WaitForSeconds(1);
+        waveCount++;
+        waveCooldown = false;
+    }
+    IEnumerator StartWave4()
+    {
+        waveCooldown = true;
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        resourceScript.GetComponent<ShopAndResourceManager>().playerResources += 250;
+        yield return new WaitForSeconds(1);
+        waveCount++;
+        waveCooldown = false;
+    }
+    IEnumerator StartWave5()
+    {
+        waveCooldown = true;
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnWhactus();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
+        SpawnMarchigold();
+        yield return new WaitForSeconds(1);
         waveCount++;
         waveCooldown = false;
     }
