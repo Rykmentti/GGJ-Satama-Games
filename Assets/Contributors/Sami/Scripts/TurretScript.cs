@@ -64,7 +64,7 @@ public class TurretScript : MonoBehaviour
         }
         if (currentTarget != null && shootCooldown == false)
         {
-            Debug.Log("We are shooting the Enemy!");
+            //Debug.Log("We are shooting the Enemy!");
             DoDamage();
             StartCoroutine(ShootCooldown());
         }

@@ -62,7 +62,7 @@ public class ShovelistaScript : MonoBehaviour
         }
         if (currentTarget != null && shootCooldown == false)
         {
-            Debug.Log("We are shooting the Enemy!");
+            //Debug.Log("We are shooting the Enemy!");
             SpawnProjectile();
             StartCoroutine(ShootCooldown());
         }

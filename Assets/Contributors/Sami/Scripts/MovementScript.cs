@@ -80,7 +80,7 @@ public class MovementScript : MonoBehaviour
     float DistanceCalcuation()
     {
        distanceToTarget = Vector3.Distance(targetLocation, transform.position);
-       Debug.Log("Distance to target is " + distanceToTarget);
+       //Debug.Log("Distance to target is " + distanceToTarget);
        return distanceToTarget;
     }
 }

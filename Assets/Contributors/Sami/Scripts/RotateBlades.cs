@@ -60,7 +60,7 @@ public class RotateBlades : MonoBehaviour
         }
         if (shootCooldown == false)
         {
-            Debug.Log("We are shooting the Enemy!");
+            //Debug.Log("We are shooting the Enemy!");
             other.gameObject.GetComponent<EnemyController>().ReceiveDamage(damage);
             StartCoroutine(ShootCooldown());
         }
