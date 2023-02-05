@@ -2,18 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class TurretScript : MonoBehaviour
+public class RotateBlades : MonoBehaviour
 {
     enum CurrentState
     {
         Idling,
-        ShootingAtEnemy
+        SpinningAtEnemy
     }
-    [SerializeField] AudioSource audioSource;
     [SerializeField] CurrentState currentState;
-    [SerializeField] GameObject currentTarget;
-    [SerializeField] GameObject detector;
     [SerializeField] int damage;
     [SerializeField] float firerate;
     [SerializeField] bool shootCooldown;
@@ -24,20 +20,20 @@ public class TurretScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetState(CurrentState.ShootingAtEnemy);
+        SetState(CurrentState.SpinningAtEnemy);
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentTarget = detector.GetComponent<DetectorScript>().detectorTarget;
+        transform.Rotate(0, 0, 360 * Time.deltaTime);
         switch (currentState)
         {
             case CurrentState.Idling: // Idle Behaviour
                 IdleBehavior();
                 break;
-            case CurrentState.ShootingAtEnemy:
-                ShootAtEnemy();
+            case CurrentState.SpinningAtEnemy:
+                SpinBlades();
                 break;
             default: // Default Behaviour. I.e. If statemachine does not recognize the state, it will default to this state that something is trying to put into it. (It's not in enum CurrentState?)
                 Debug.Log("This state '" + currentState + "' for state machine doesn't exist, or there is a typo in name(string) of the state, defaulting to Idle State");
@@ -47,48 +43,27 @@ public class TurretScript : MonoBehaviour
     }
     void IdleBehavior()
     {
-
+        
     }
-    void ShootAtEnemy()
+    void SpinBlades()
     {
-        PointAtEnemy();
+        transform.Rotate(0, 0, 1080 * Time.deltaTime);
+    }
+    void OnTriggerStay2D(Collider2D other)
+    {
+
         IEnumerator ShootCooldown()
         {
             shootCooldown = true;
             yield return new WaitForSeconds(firerate);
             shootCooldown = false;
         }
-        if (currentTarget == null)
-        {
-
-        }
-        if (currentTarget != null && shootCooldown == false)
+        if (shootCooldown == false)
         {
             Debug.Log("We are shooting the Enemy!");
-            DoDamage();
+            other.gameObject.GetComponent<EnemyController>().ReceiveDamage(damage);
             StartCoroutine(ShootCooldown());
         }
+    }
 
-    }
-    void PointAtEnemy()
-    {
-        {
-            float targetPosX = currentTarget.transform.position.x;
-            float targetPosY = currentTarget.transform.position.y;
-            float selfPosX = transform.position.x;
-            float selfPosY = transform.position.y;
-
-            Vector2 Point_1 = new Vector2(targetPosX, targetPosY);
-            Vector2 Point_2 = new Vector2(selfPosX, selfPosY);
-            float rotation = Mathf.Atan2(Point_2.y - Point_1.y, Point_2.x - Point_1.x) * Mathf.Rad2Deg;
-            Vector3 turretStartRotation = new Vector3(0f, 0f, rotation + 90);
-            Quaternion quaternion = Quaternion.Euler(turretStartRotation);
-            transform.rotation = quaternion;
-        }
-    }
-    void DoDamage()
-    {
-        audioSource.Play();
-        currentTarget.GetComponent<EnemyController>().ReceiveDamage(damage);
-    }
 }

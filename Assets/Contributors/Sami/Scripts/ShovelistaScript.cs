@@ -2,19 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class TurretScript : MonoBehaviour
+public class ShovelistaScript : MonoBehaviour
 {
     enum CurrentState
     {
         Idling,
         ShootingAtEnemy
     }
-    [SerializeField] AudioSource audioSource;
     [SerializeField] CurrentState currentState;
     [SerializeField] GameObject currentTarget;
+    [SerializeField] GameObject shovelistaProjectile;
     [SerializeField] GameObject detector;
-    [SerializeField] int damage;
     [SerializeField] float firerate;
     [SerializeField] bool shootCooldown;
     void SetState(CurrentState state) // Method we use to change states in the state machine.
@@ -65,7 +63,7 @@ public class TurretScript : MonoBehaviour
         if (currentTarget != null && shootCooldown == false)
         {
             Debug.Log("We are shooting the Enemy!");
-            DoDamage();
+            SpawnProjectile();
             StartCoroutine(ShootCooldown());
         }
 
@@ -86,9 +84,8 @@ public class TurretScript : MonoBehaviour
             transform.rotation = quaternion;
         }
     }
-    void DoDamage()
+    void SpawnProjectile()
     {
-        audioSource.Play();
-        currentTarget.GetComponent<EnemyController>().ReceiveDamage(damage);
+        Instantiate(shovelistaProjectile, transform.position, transform.rotation);
     }
 }

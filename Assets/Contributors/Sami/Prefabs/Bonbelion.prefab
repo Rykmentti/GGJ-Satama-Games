@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8577290689100389097}
   - component: {fileID: 272542709261266427}
   m_Layer: 0
-  m_Name: TestEnemy 2
+  m_Name: Bonbelion
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e732de56aec9d4e48babbb38dde718ca, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 7db8537ff1f38734b9d1770743f3ff04, type: 3}
+  m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -161,6 +161,6 @@ MonoBehaviour:
   - {fileID: 0}
   targetLocation: {x: 0, y: 0, z: 0}
   distanceToTarget: 0
-  speed: 5
+  speed: 6
   currentNavPointInTheList: 0
   haveWeReachedTarget: 0

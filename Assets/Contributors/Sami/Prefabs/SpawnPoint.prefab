@@ -105,6 +105,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  bonbelion: {fileID: 5545698759837081299, guid: 5415d4eeb7170eb4484c1d470850982a, type: 3}
-  marchigold: {fileID: 0}
-  whactus: {fileID: 0}
+  bonbelion: {fileID: 5545698759837081299, guid: 1a801184a939dbd4f834797c9f4d0a20, type: 3}
+  marchigold: {fileID: 5545698759837081299, guid: 5415d4eeb7170eb4484c1d470850982a, type: 3}
+  whactus: {fileID: 5545698759837081299, guid: 1d4140e0c887e794b92c685e09dd5d69, type: 3}

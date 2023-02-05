@@ -14,12 +14,12 @@ public class ShopAndResourceManager : MonoBehaviour
 
     [SerializeField] bool buildMode;
 
-    int atomizerPrice = 10;
-    int shovelistaPrice = 25;
+    int atomizerPrice = 25;
+    int shovelistaPrice = 10;
     int mownlawerPrice = 50;
 
     int buildCost;
-    [SerializeField] int playerResources = 100;
+    public int playerResources = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +50,7 @@ public class ShopAndResourceManager : MonoBehaviour
             buildCost = mownlawerPrice;
             Debug.Log("Build Mode for Mownlawer");
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && buildMode == true)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && buildMode == true && playerResources >= buildCost)
         {
             Vector3 mousePos = Input.mousePosition;
             mouseScreenPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, Camera.main.nearClipPlane));

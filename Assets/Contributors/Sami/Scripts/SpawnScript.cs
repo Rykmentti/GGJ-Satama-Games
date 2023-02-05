@@ -22,38 +22,22 @@ public class SpawnScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(waveCooldown == false)
+        if (Input.GetKeyDown(KeyCode.F1))
         {
-            StartCoroutine(StartWave());
+            Instantiate(bonbelion, transform.position, transform.rotation, transform.parent = transform);
         }
-    }
-    IEnumerator StartWave()
-    {
-        waveCooldown = true;
-        SpawnBonbelion();
-        yield return new WaitForSeconds(1);
-        SpawnBonbelion();
-        yield return new WaitForSeconds(1);
-        SpawnBonbelion();
-        yield return new WaitForSeconds(1);
-        SpawnBonbelion();
-        yield return new WaitForSeconds(1);
-        SpawnBonbelion();
-        yield return new WaitForSeconds(1);
-        SpawnBonbelion();
-        yield return new WaitForSeconds(1);
-        SpawnBonbelion();
-        yield return new WaitForSeconds(1);
-        SpawnBonbelion();
-        yield return new WaitForSeconds(1);
-        SpawnBonbelion();
-        yield return new WaitForSeconds(1);
-        SpawnBonbelion();
-        yield return new WaitForSeconds(1);
-        SpawnBonbelion();
-        yield return new WaitForSeconds(timeBetweenWaves);
-        waveCount++;
-        waveCooldown = false;
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            Instantiate(marchigold, transform.position, transform.rotation, transform.parent = transform);
+        }
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            Instantiate(whactus, transform.position, transform.rotation, transform.parent = transform);
+        }
+            if (waveCooldown == false)
+        {
+            //StartCoroutine(StartWave());
+        }
     }
     void SpawnWaves()
     {
@@ -99,5 +83,33 @@ public class SpawnScript : MonoBehaviour
         caller.GetComponent<MovementScript>().NavPoints[4] = NavPoints[4];
         caller.GetComponent<MovementScript>().NavPoints[5] = NavPoints[5];
         caller.GetComponent<MovementScript>().NavPoints[6] = NavPoints[6];
+    }
+    IEnumerator StartWave()
+    {
+        waveCooldown = true;
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(1);
+        SpawnBonbelion();
+        yield return new WaitForSeconds(timeBetweenWaves);
+        waveCount++;
+        waveCooldown = false;
     }
 }
