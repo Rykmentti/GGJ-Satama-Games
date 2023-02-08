@@ -63,7 +63,7 @@ public class MovementScript : MonoBehaviour
 
         DistanceCalcuation();
         Vector3 moveDirection = (targetLocation - transform.position).normalized;
-        if (distanceToTarget < 0.01f && haveWeReachedTarget != true)
+        if (distanceToTarget < 0.05f && haveWeReachedTarget != true)
         {
             currentNavPointInTheList++;
             targetLocation = NavPoints[currentNavPointInTheList].transform.position;
@@ -71,7 +71,7 @@ public class MovementScript : MonoBehaviour
         else
         {
             transform.Translate(speed * Time.deltaTime * moveDirection);
-            if (distanceToTarget >= 0.01f)
+            if (distanceToTarget >= 0.05f)
             {
                 haveWeReachedTarget = false;
             }
